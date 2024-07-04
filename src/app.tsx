@@ -2,24 +2,28 @@ import React, { useMemo } from 'react';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-import ThemeContext from './context/theme-context';
-import useDarkTheme from './hooks/use-dark-theme';
-
 import MainPage from './pages/main';
+
+import { ThemeContext, DrawerContext } from './context';
+import { useDarkTheme, useDrawer } from './hooks';
 
 import { getDesignTokens } from './utils/get-design-tokens';
 
 export default function MiniDrawer() {
-  const { providerValue } = useDarkTheme();
+  const { providerTheme } = useDarkTheme();
+  const { providerDrawer } = useDrawer();
   const theme = useMemo(
-    () => createTheme(getDesignTokens(providerValue.isDark)),
-    [providerValue.isDark],
+    () => createTheme(getDesignTokens(providerTheme.isDark)),
+    [providerTheme.isDark],
   );
+
   return (
-    <ThemeContext.Provider value={providerValue}>
-      <ThemeProvider theme={theme}>
-        <MainPage />
-      </ThemeProvider>
+    <ThemeContext.Provider value={providerTheme}>
+      <DrawerContext.Provider value={providerDrawer}>
+        <ThemeProvider theme={theme}>
+          <MainPage />
+        </ThemeProvider>
+      </DrawerContext.Provider>
     </ThemeContext.Provider>
   );
 }
