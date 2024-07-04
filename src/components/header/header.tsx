@@ -1,16 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { styled } from '@mui/material/styles';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import { Toolbar } from '@mui/material';
 
-import Logo from '../logo';
-import MenuButton from '../menu-button';
-import ProfileMenu from '../profile-menu';
-import ThemeButton from '../theme-button';
-import NotificationsIconButton from '../notifications-icon-button';
+import {
+  Logo, MenuButton, ProfileMenu, ThemeButton, NotificationsIconButton,
+} from './components';
 
-type HeaderType = { open: boolean; handleDrawerOpen: () => void; };
+import { DrawerContext } from '../../context';
 
 const drawerWidth = 240;
 
@@ -36,14 +34,13 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
-export default function Header({ open, handleDrawerOpen }: HeaderType) {
+export default function Header() {
+  const { isOpen } = useContext(DrawerContext);
+
   return (
-    <AppBar position="fixed" open={open}>
+    <AppBar position="fixed" open={isOpen}>
       <Toolbar>
-        <MenuButton
-          handleDrawerOpen={handleDrawerOpen}
-          open={open}
-        />
+        <MenuButton />
         <Logo />
         <NotificationsIconButton />
         <ProfileMenu />
