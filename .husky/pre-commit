@@ -1,0 +1,7 @@
+BLUE='\033[0;34m'         # Blue \033[0;31m
+Green='\033[0;32m'        # Green
+NC='\033[0m'              # No Color
+
+echo "${BLUE}Husky woof!${NC}"
+npm run lint
+echo "${Green}Done!${NC}"
