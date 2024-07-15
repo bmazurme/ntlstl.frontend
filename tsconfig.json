@@ -1,61 +1,45 @@
 {
   "compilerOptions": {
+    "lib": [
+      "dom",
+      "es2017"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "es6",
     "jsx": "react",
-    "esModuleInterop": true
-  },
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    }
-  },
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
+    "importHelpers": true,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "declaration": false,
+    "sourceMap": false,
+    "baseUrl": ".",
+    "outDir": "./build",
+    "paths": {
+      "*": ["src/*"]
     },
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
-  "plugins": [
-    "react",
-    "@typescript-eslint"
-  ],
-  "rules": {
-    "react/prop-types": "off",
-    "no-unused-vars": "off",
-    "no-console": "off",
-    "camelcase": "off",
-    "no-undef": "off",
-    "no-underscore-dangle": "off",
-    "react/no-array-index-key": "off",
-    "import/no-unresolved": "off",
-    "react/no-children-prop": "off",
-    "prefer-promise-reject-errors": "off",
-    "react/jsx-props-no-spreading": "off",
-    "import/prefer-default-export": "off",
-    "react/require-default-props": "off",
-    "react/state-in-constructor": "off",
-    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
-    "@typescript-eslint/no-non-null-assertion": "off",
-    "@typescript-eslint/no-var-requires": 0,
-    "@typescript-eslint/ban-ts-comment": "off",
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never",
-        "mjs": "never",
-        "jsx": "never",
-        "tsx": "never",
-        "ts": "never"
-      }
+    "typeRoots": [
+      "src/@types/*.d.ts",
+      "typings/**/*.d.ts",
+      "node_modules/@types",
+      "src/*.d.ts",
+      "src/@types"
     ]
-  }
+  },
+  "include": [
+    "src",
+    "src/*.d.ts",
+    "typings/**/*.d.ts",
+    // "../webpack.config.ts",
+    "./node_modules/@types",
+    "src/@types/*.d.ts",
+    "server",
+  ],
+  "exclude": [
+    "**/*.js"
+  ]
 }
