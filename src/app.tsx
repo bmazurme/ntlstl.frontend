@@ -1,8 +1,10 @@
 import React, { useMemo } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import MainPage from './pages/main';
+import NotFoundPage from './pages/not-found';
 
 import { ThemeContext, DrawerContext } from './context';
 import { useDarkTheme, useDrawer } from './hooks';
@@ -21,7 +23,10 @@ export default function MiniDrawer() {
     <ThemeContext.Provider value={providerTheme}>
       <DrawerContext.Provider value={providerDrawer}>
         <ThemeProvider theme={theme}>
-          <MainPage />
+          <Routes>
+            <Route path="/" element={(<MainPage />)} />
+            <Route path="*" element={(<NotFoundPage />)} />
+          </Routes>
         </ThemeProvider>
       </DrawerContext.Provider>
     </ThemeContext.Provider>
