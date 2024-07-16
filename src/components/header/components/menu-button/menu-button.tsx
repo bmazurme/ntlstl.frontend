@@ -14,6 +14,7 @@ export default function MenuButton() {
   return (
     <IconButton
       color="inherit"
+      size="small"
       aria-label="open drawer"
       onClick={onToggle}
       edge="start"
