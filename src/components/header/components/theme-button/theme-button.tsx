@@ -14,9 +14,9 @@ export default function ThemeButton() {
 
   return (
     <IconButton
-      color="inherit"
+      color="primary"
       aria-label="theme mode"
-      size="large"
+      size="small"
       onClick={onToggle}
     >
       {isDark === 'dark' ? <LightMode fontSize="small" /> : <DarkMode fontSize="small" />}
