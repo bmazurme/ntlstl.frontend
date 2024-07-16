@@ -6,18 +6,14 @@ import { LightMode, DarkMode } from '@mui/icons-material';
 import ThemeContext from '../../../../context/theme-context';
 
 export default function ThemeButton() {
-  const { isDark, setIsDark } = useContext(ThemeContext);
-  const onToggle = () => {
-    setIsDark(isDark === 'light' ? 'dark' : 'light');
-    localStorage.setItem('ms-theme', isDark === 'light' ? 'dark' : 'light');
-  };
+  const { isDark, toggleIsDark } = useContext(ThemeContext);
 
   return (
     <IconButton
+      size="small"
       color="primary"
       aria-label="theme mode"
-      size="small"
-      onClick={onToggle}
+      onClick={toggleIsDark}
     >
       {isDark === 'dark' ? <LightMode fontSize="small" /> : <DarkMode fontSize="small" />}
     </IconButton>
