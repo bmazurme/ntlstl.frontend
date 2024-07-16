@@ -17,12 +17,12 @@ export default function ProfileMenu() {
   return (
     <>
       <IconButton
-        size="large"
+        size="small"
         aria-label="account of current user"
         aria-controls="menu-appbar"
         aria-haspopup="true"
         onClick={handleMenu}
-        color="inherit"
+        color="primary"
       >
         <AccountCircle />
       </IconButton>
