@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -13,6 +14,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ModeCommentIcon from '@mui/icons-material/ModeComment';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -23,6 +25,8 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function PostLayout() {
+  const { id } = useParams();
+
   return (
     <Box sx={{ width: '100%' }}>
       <Stack spacing={2}>
@@ -32,13 +36,13 @@ export default function PostLayout() {
               R
             </Avatar>
             <Typography variant="subtitle1" gutterBottom>
-              subtitle1
+              {`subtitle1 - ${id}`}
             </Typography>
           </Stack>
           <Typography variant="h5" gutterBottom>
             h3. Post
           </Typography>
-          <Box sx={{ paddingTop: 4, paddingBottom: 4 }}>
+          <Box sx={{ paddingTop: 4, paddingBottom: 2 }}>
             <Typography paragraph>
               Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over
               medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring
@@ -67,10 +71,21 @@ export default function PostLayout() {
             </IconButton>
           </Stack>
         </Item>
-        <Item>
+        <Item sx={{ paddingTop: 2, paddingBottom: 2 }}>
           <Typography variant="h6" gutterBottom>
             h6 Comment
           </Typography>
+          <TextField
+            id="outlined-multiline-static"
+            label="Multiline"
+            multiline
+            rows={4}
+            sx={{ width: '100%', marginTop: 2 }}
+            defaultValue="Default Value"
+          />
+          <Box sx={{ paddingTop: 2 }}>
+            <Button variant="contained">Submit</Button>
+          </Box>
         </Item>
       </Stack>
     </Box>
