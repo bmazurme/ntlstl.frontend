@@ -15,7 +15,9 @@ export default function ThemeButton() {
       aria-label="theme mode"
       onClick={toggleIsDark}
     >
-      {isDark === 'dark' ? <LightMode fontSize="small" /> : <DarkMode fontSize="small" />}
+      {isDark === 'dark'
+        ? <LightMode fontSize="small" />
+        : <DarkMode fontSize="small" />}
     </IconButton>
   );
 }

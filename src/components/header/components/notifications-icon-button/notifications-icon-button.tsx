@@ -7,11 +7,11 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 export default function NotificationsIconButton() {
   return (
     <IconButton
-      size="large"
+      size="small"
       aria-label="notifications icon button"
       aria-controls="menu-appbar"
       aria-haspopup="true"
-      color="inherit"
+      color="primary"
     >
       <NotificationsIcon />
     </IconButton>

@@ -39,8 +39,8 @@ const AppBar = styled(MuiAppBar, {
 
 export default function Header() {
   const { pathname } = useAppLocation();
-  const navigate = useNavigate();
   const { isOpen } = useContext(DrawerContext);
+  const navigate = useNavigate();
   const handleNavigate = (url: string) => navigate(url);
 
   return (
@@ -58,15 +58,15 @@ export default function Header() {
           </Button>
           <Button
             size="small"
-            variant={pathname === '/posts/2' ? 'contained' : 'text'}
-            onClick={() => handleNavigate('/posts/2')}
+            variant={pathname === '/post/2' ? 'contained' : 'text'}
+            onClick={() => handleNavigate('/post/2')}
           >
             Post
           </Button>
           <Button
             size="small"
-            variant={pathname === '/posts/2/edit' ? 'contained' : 'text'}
-            onClick={() => handleNavigate('/posts/2/edit')}
+            variant={pathname === '/post/2/edit' ? 'contained' : 'text'}
+            onClick={() => handleNavigate('/post/2/edit')}
           >
             Post edit
           </Button>
