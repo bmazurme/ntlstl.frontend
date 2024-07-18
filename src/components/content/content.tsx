@@ -2,9 +2,7 @@
 import React, { useContext } from 'react';
 import type { PropsWithChildren } from 'react';
 
-import {
-  styled, useTheme, Theme, CSSObject,
-} from '@mui/material/styles';
+import { styled, Theme, CSSObject } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
 import { List, Box, Divider } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -16,7 +14,7 @@ import ListItemText from '@mui/material/ListItemText';
 
 import FolderIcon from '@mui/icons-material/Folder';
 
-import { ChevronLeft as ChevronLeftIcon, ChevronRight as ChevronRightIcon } from '@mui/icons-material';
+import { ChevronLeft as ChevronLeftIcon } from '@mui/icons-material';
 
 import Header from '../header';
 
@@ -73,8 +71,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 export default function Contant({ children, header }: PropsWithChildren & { header?: boolean; }) {
   const { isOpen, setIsOpen } = useContext(DrawerContext);
-  const theme = useTheme();
-
   const handleDrawerClose = () => {
     setIsOpen(false);
   };
@@ -88,8 +84,8 @@ export default function Contant({ children, header }: PropsWithChildren & { head
         {' '}
         <Drawer variant="permanent" open={isOpen}>
           <DrawerHeader>
-            <IconButton onClick={handleDrawerClose}>
-              {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+            <IconButton size="small" onClick={handleDrawerClose}>
+              <ChevronLeftIcon />
             </IconButton>
           </DrawerHeader>
           <Divider />
