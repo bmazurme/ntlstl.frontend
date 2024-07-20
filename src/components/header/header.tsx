@@ -1,17 +1,16 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { styled } from '@mui/material/styles';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import { Button, Stack, Toolbar } from '@mui/material';
-
-import { useAppLocation } from '../../hooks';
+import { styled } from '@mui/material/styles';
 
 import {
   Logo, MenuButton, ProfileMenu, ThemeButton, NotificationsIconButton,
 } from './components';
 
 import { DrawerContext } from '../../context';
+import { useAppLocation } from '../../hooks';
 
 const drawerWidth = 240;
 
