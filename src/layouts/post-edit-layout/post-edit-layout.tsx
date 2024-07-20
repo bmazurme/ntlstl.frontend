@@ -4,15 +4,15 @@ import { useParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
-import { styled } from '@mui/material/styles';
+import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Avatar from '@mui/material/Avatar';
+import { styled } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 
 import Autocomplete from '../../components/autocomplete';
+import ButtonGroup from '../../components/button-group';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -56,13 +56,9 @@ export default function PostEditLayout() {
           </Stack>
           <Stack direction="row" spacing={2} sx={{ paddingTop: 2 }}>
             <Autocomplete />
-            {/* <TextField id="outlined-basic" label="Tags" variant="outlined" fullWidth /> */}
           </Stack>
           <Divider sx={{ paddingTop: 2 }} />
-          <Stack direction="row" spacing={2} sx={{ paddingTop: 2 }}>
-            <Button variant="outlined">Cancel</Button>
-            <Button variant="contained">Save</Button>
-          </Stack>
+          <ButtonGroup />
         </Item>
       </Stack>
     </Box>
