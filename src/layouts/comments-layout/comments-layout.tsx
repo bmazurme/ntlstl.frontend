@@ -42,7 +42,10 @@ export default function CommentsLayout() {
         <Stack sx={{ paddingTop: 4 }}>
           <Divider />
         </Stack>
-        <Avatar sx={{ bgcolor: red[500], width: 24, height: 24 }} aria-label="recipe">
+        <Avatar
+          sx={{ bgcolor: red[500], width: 24, height: 24 }}
+          aria-label="recipe"
+        >
           R
         </Avatar>
         <Typography paragraph>jjjjjj</Typography>
