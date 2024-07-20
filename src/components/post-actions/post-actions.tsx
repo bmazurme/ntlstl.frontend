@@ -5,7 +5,11 @@ import { Favorite as FavoriteIcon, Share as ShareIcon, ModeComment as ModeCommen
 
 export default function PostActions() {
   return (
-    <Stack direction="row" spacing={2} sx={{ paddingTop: 2 }}>
+    <Stack
+      direction="row"
+      spacing={2}
+      sx={{ paddingTop: 2 }}
+    >
       <IconButton aria-label="add to favorites">
         <ModeCommentIcon />
       </IconButton>
