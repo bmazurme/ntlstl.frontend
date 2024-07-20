@@ -2,7 +2,6 @@
 import React, { useContext } from 'react';
 import type { PropsWithChildren } from 'react';
 
-import { styled, Theme, CSSObject } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
 import { List, Box, Divider } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -11,13 +10,11 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import { styled, Theme, CSSObject } from '@mui/material/styles';
 
-import FolderIcon from '@mui/icons-material/Folder';
-
-import { ChevronLeft as ChevronLeftIcon } from '@mui/icons-material';
+import { ChevronLeft as ChevronLeftIcon, Folder as FolderIcon } from '@mui/icons-material';
 
 import Header from '../header';
-
 import { DrawerContext } from '../../context';
 
 const drawerWidth = 240;
