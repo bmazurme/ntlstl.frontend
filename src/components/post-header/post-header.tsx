@@ -1,15 +1,19 @@
 import React from 'react';
 
 import { Stack, Avatar, Typography } from '@mui/material';
-import { red } from '@mui/material/colors';
+
+import { avatarStyle } from './post-header-style';
 
 import { post } from '../../mocks/post';
 
 export default function PostHeader() {
   return (
-    <Stack direction="row" spacing={2}>
+    <Stack
+      direction="row"
+      spacing={2}
+    >
       <Avatar
-        sx={{ bgcolor: red[500], width: 24, height: 24 }}
+        sx={avatarStyle}
         aria-label="recipe"
       >
         R
