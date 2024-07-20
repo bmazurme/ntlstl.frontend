@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useState, MouseEvent } from 'react';
 
 import {
   Menu, MenuItem, IconButton, Divider, ListItemIcon,
 } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
 import { AccountCircle, Logout as LogoutIcon, Person as PersonIcon } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 export default function ProfileMenu() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
+  const navigate = useNavigate();
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const handleMenu = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+  const onHandleNavigate = (url: string) => {
+    setAnchorEl(null);
+    navigate(url);
   };
 
   return (
@@ -41,7 +48,14 @@ export default function ProfileMenu() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={() => onHandleNavigate('/post/add')}>
+          <ListItemIcon>
+            <AddIcon fontSize="small" />
+          </ListItemIcon>
+          Add post
+        </MenuItem>
+        <Divider />
+        <MenuItem onClick={() => onHandleNavigate('/profile/1')}>
           <ListItemIcon>
             <PersonIcon fontSize="small" />
           </ListItemIcon>

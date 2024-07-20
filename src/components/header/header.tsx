@@ -65,6 +65,13 @@ export default function Header() {
           </Button>
           <Button
             size="small"
+            variant={pathname === '/post/add' ? 'contained' : 'text'}
+            onClick={() => handleNavigate('/post/add')}
+          >
+            Post add
+          </Button>
+          <Button
+            size="small"
             variant={pathname === '/post/2/edit' ? 'contained' : 'text'}
             onClick={() => handleNavigate('/post/2/edit')}
           >
