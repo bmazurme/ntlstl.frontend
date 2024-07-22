@@ -1,7 +1,6 @@
 import React from 'react';
 
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
+import { Button, Stack } from '@mui/material';
 
 export default function ButtonGroup() {
   return (
