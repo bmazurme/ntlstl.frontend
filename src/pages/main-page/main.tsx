@@ -3,7 +3,9 @@ import React from 'react';
 import Content from '../../components/content';
 // import MainLayout from '../../layouts/main';
 
-export default function MainPage() {
+import withUser from '../../hocs/with-user';
+
+function MainPage() {
   return (
     <Content header>
       {/* <MainLayout /> */}
@@ -11,3 +13,5 @@ export default function MainPage() {
     </Content>
   );
 }
+
+export default withUser(MainPage);
